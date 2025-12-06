@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: mall-api
+  mvc:
+    pathMatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mall?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull
+    userName: root
+    password: qwejkl369
+
+server:
+  port: 8011
