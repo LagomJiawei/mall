@@ -1,0 +1,22 @@
+CREATE TABLE `sys_menu` (
+    `id` bigint NOT NULL AUTO_INCREMENT COMMENT 'ID',
+    `name` varchar(255) DEFAULT NULL COMMENT '菜单名称',
+    `pid` bigint NOT NULL COMMENT '上级菜单ID',
+    `sort` int(3) NOT NULL COMMENT '排序',
+    `icon` varchar(30) DEFAULT NULL COMMENT '图标',
+    `path` varchar(255) DEFAULT NULL COMMENT '路由',
+    `hidden` tinyint(1) DEFAULT 0 COMMENT '是否隐藏 1:隐藏 0:展示',
+    `is_link` tinyint(1) DEFAULT 0 COMMENT '是否外链 1:是 0:否',
+    `type` int(2) DEFAULT NULL COMMENT '类型 1:目录 2:菜单 3:按钮',
+    `permission` varchar(255) DEFAULT NULL COMMENT '功能权限',
+    `url` varchar(30) DEFAULT NULL COMMENT '页面url地址',
+    `create_user_id` bigint NOT NULL COMMENT '创建人ID',
+    `create_user_name` varchar(30) NOT NULL COMMENT '创建人名称',
+    `create_time` datetime(3) DEFAULT NULL COMMENT '创建时间',
+    `update_user_id` bigint DEFAULT NULL COMMENT '修改人ID',
+    `update_user_name` varchar(30)  DEFAULT NULL COMMENT '修改人名称',
+    `update_time` datetime(3) DEFAULT NULL COMMENT '修改时间',
+    `is_del` tinyint(1) DEFAULT 0 COMMENT '是否删除 1:已删除 0:未删除',
+    PRIMARY KEY (`id`) USING BTREE,
+    KEY `index_pid` (`pid`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4  COMMENT='菜单表';

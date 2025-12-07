@@ -1,0 +1,23 @@
+CREATE TABLE `sys_user` (
+    `id` bigint NOT NULL AUTO_INCREMENT COMMENT 'ID',
+    `avatar_id` bigint DEFAULT NULL COMMENT '用户头像ID',
+    `user_name` varchar(30) DEFAULT NULL COMMENT '用户名',
+    `password` varchar(30) DEFAULT NULL COMMENT '密码',
+    `phone` varchar(20) DEFAULT NULL COMMENT '手机号',
+    `email` varchar(50) DEFAULT NULL COMMENT '邮箱',
+    `dept_id` bigint DEFAULT NULL COMMENT '部门ID',
+    `job_id` bigint DEFAULT NULL COMMENT '岗位ID',
+    `last_change_password_time` datetime(3) DEFAULT NULL COMMENT '最后修改密码的时间',
+    `nick_name` varchar(30) DEFAULT NULL COMMENT '别名',
+    `sex` tinyint(2) DEFAULT NULL COMMENT '性别 1:男 2:女',
+    `valid_status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '有效状态 1:有效 0:无效',
+    `create_user_id` bigint NOT NULL COMMENT '创建人ID',
+    `create_user_name` varchar(30) NOT NULL COMMENT '创建人名称',
+    `create_time` datetime(3) DEFAULT NULL COMMENT '创建时间',
+    `update_user_id` bigint DEFAULT NULL COMMENT '修改人ID',
+    `update_user_name` varchar(30)  DEFAULT NULL COMMENT '修改人名称',
+    `update_time` datetime(3) DEFAULT NULL COMMENT '修改时间',
+    `is_del` tinyint(1) DEFAULT 0 COMMENT '是否删除 1:已删除 0:未删除',
+    PRIMARY KEY (`id`) USING BTREE,
+    UNIQUE KEY `uk_user_name` (`user_name`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
