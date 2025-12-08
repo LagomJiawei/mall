@@ -23,6 +23,12 @@
             <version>1.0</version>
             <scope>compile</scope>
         </dependency>
+        <!--为了方便查看全部接口，引入swagger功能，自动生成 API 文档，便于在线调试接口-->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-spring-boot-starter</artifactId>
+            <version>3.0.2</version>
+        </dependency>
     </dependencies>
 
 </project>

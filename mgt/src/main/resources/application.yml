@@ -2,7 +2,7 @@ spring:
   application:
     name: mall-api
   mvc:
-    pathMatch:
+    pathmatch:
       matching-strategy: ant_path_matcher
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
