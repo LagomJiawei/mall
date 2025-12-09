@@ -1,6 +1,7 @@
 spring:
   application:
     name: mall-api
+  # 解决 Springfox3.0.0 与 Spring Boot 2.6+ 在路径匹配策略上不兼容问题
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
@@ -10,6 +11,13 @@ spring:
     url: jdbc:mysql://localhost:3306/mall?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull
     userName: root
     password: qwejkl369
+  # 临时增加一个测试权限控制功能的账号
+  security:
+    user:
+      name: zhangsan
+      password: 123456
+    roles:
+      User
 
 server:
   port: 8011

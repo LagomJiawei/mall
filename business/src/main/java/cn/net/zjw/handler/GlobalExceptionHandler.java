@@ -24,7 +24,7 @@ public class GlobalExceptionHandler {
      * @return API请求的响应实体
      */
     @ExceptionHandler(Throwable.class)
-    private ApiResult handleException(Throwable e) {
+    public ApiResult handleException(Throwable e) {
         if (e instanceof BusinessException) {
             BusinessException businessException = (BusinessException) e;
             log.error("当前请求出现业务异常：", e);
