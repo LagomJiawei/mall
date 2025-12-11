@@ -74,7 +74,7 @@ public class SpringSecurityConfig implements ApplicationContextAware {
         }
         // 配置安全策略
         return httpSecurity
-                // 禁用 CSRF（关闭跨站请求伪造（CSRF）保护机制）
+                // 禁用 CSRF（跨站请求伪造）保护机制）
                 .csrf().disable()
                 // 处理异常（启用授权异常处理功能）
                 .exceptionHandling()
@@ -103,7 +103,7 @@ public class SpringSecurityConfig implements ApplicationContextAware {
                         "/**/*.js",
                         "/webSocket/**"
                 ).permitAll()
-                // 配置了允许直接访问 Swagger UI 和相关文档接口，方便调试和查看 API 文档
+                // 配置了允许直接访问 Swagger UI 和接口文档，方便调试和查看 API 文档
                 .antMatchers("/swagger-ui/**").permitAll()
                 .antMatchers("/swagger-resources/**").permitAll()
                 .antMatchers("/webjars/**").permitAll()

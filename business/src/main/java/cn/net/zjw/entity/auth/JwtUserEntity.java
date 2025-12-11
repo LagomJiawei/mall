@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @author ZhangJw
  * @date 2025年12月10日 19:51
- * 用来生成Token的用户信息实体类
+ * 用来生成JWT令牌的用户信息实体类
  */
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,6 +23,9 @@ public class JwtUserEntity implements UserDetails {
     private String username;
     @JsonIgnore
     private String password;
+    /**
+     * 权限列表
+     */
     private List<SimpleGrantedAuthority> authorities;
     /**
      * 角色信息

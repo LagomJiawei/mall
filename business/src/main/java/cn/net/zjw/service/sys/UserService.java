@@ -47,7 +47,7 @@ public class UserService {
 		JwtUserEntity jwtUserEntity = new JwtUserEntity(
 				1L, // 暂时固定ID
 				authUserEntity.getUsername(),
-				null, // 密码不需要在token中
+				null, // 密码不需要在 令牌 中
 				authorities,
 				Arrays.asList("User")
 		);

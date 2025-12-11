@@ -30,7 +30,7 @@ public class TokenHelper {
     private String tokenSecret;
 
     /**
-     * 设置token过期时间
+     * 设置令牌的过期时间（单位：秒）
      */
     @Value("${mall.mgt.tokenExpireTimeInRecord:3600}")
     private int tokenExpireTimeInRecord;
@@ -50,10 +50,13 @@ public class TokenHelper {
         String token = Jwts.builder()
                 .setSubject(username)
                 .setExpiration(generateExpired())
+                // 使用HS512算法和密钥tokenSecret对令牌进行签名，确保最终生成的令牌的安全性和完整性
                 .signWith(SignatureAlgorithm.HS512, tokenSecret)
                 .compact();
+        // 把令牌存到redis中，在redis中的键名为 token:username
         redisUtil.set(getTokenKey(username), token, tokenExpireTimeInRecord);
         String userStr = JSON.toJSONString(userDetails);
+        // 把用户信息存到redis中，在redis中的键名为 user:username
         redisUtil.set(getUserKey(username), userStr, tokenExpireTimeInRecord);
         return token;
     }
@@ -69,7 +72,7 @@ public class TokenHelper {
 
 
     /**
-     * 计算过期时间
+     * 生成过期时间
      *
      * @return Date
      */

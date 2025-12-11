@@ -11,7 +11,7 @@ import javax.validation.constraints.NotBlank;
  * @date 2025年12月10日 19:44
  * 用户录入信息实体类
  */
-@ApiModel("权限用户实体")
+@ApiModel("用户录入信息实体")
 @Data
 public class AuthUserEntity {
 

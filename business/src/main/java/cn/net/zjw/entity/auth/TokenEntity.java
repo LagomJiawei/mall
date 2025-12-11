@@ -20,7 +20,7 @@ public class TokenEntity {
     private String username;
 
     /**
-     * token
+     * 令牌
      */
     private String token;
 }
